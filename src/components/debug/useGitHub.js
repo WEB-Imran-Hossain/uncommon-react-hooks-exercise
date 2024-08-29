@@ -1,9 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useDebugValue } from "react";
 
 const useGitHub = (username) => {
+    useDebugValue(`Fetching data for ${username}`) //top level useDebugValue hook write
+
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useDebugValue(
+    error
+        ? `There is an error fetching the data for ${username}`
+        : `No Error fetching the data for ${username}`
+);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +32,7 @@ const useGitHub = (username) => {
     fetchData();
   }, [username]);
 
+  useDebugValue(user, (user) => user?.bio);
   return { user, loading, error };
 };
 
