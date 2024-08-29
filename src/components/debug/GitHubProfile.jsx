@@ -1,4 +1,4 @@
-import React from 'react'
+
 import useGitHub from './useGitHub'
 
 const GitHubProfile = () => {
