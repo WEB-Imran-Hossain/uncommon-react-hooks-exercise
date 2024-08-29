@@ -1,7 +1,11 @@
-import UseDebug from "./components/UseDebug";
+import GitHubProfile from "./components/debug/GitHubProfile";
 
 function App() {
-  return <UseDebug />;
+  return (
+  <>
+  <GitHubProfile />
+  </>
+  )
 }
 
 export default App;
