@@ -17,7 +17,7 @@ const IdForm = () => {
           <input
             type="text"
             id={userNameId}
-            className="border rounded border-slate-300 px-2 py-1 w-full mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="border rounded border-slate-300 px-3 py-2 w-64 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
 
@@ -29,7 +29,7 @@ const IdForm = () => {
           <input
             type="password"
             id={passwordHintId}
-            className="border rounded border-slate-300 px-2 py-1 w-full mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="border rounded border-slate-300 px-3 py-2 w-64 mt-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             aria-describedby={passwordHintId}
           />
           <p id={passwordHintId} className="text-sm text-gray-500 mt-1">
