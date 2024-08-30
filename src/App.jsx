@@ -1,5 +1,5 @@
 import GitHubProfile from "./components/debug/GitHubProfile";
-import IdForm from "./components/debug/id/IdForm";
+import IdForm from "./components/id/IdForm";
 
 function App() {
   return (
@@ -8,6 +8,9 @@ function App() {
   <hr />
   <hr />
   <IdForm />
+  <hr />
+  <hr />
+  
   </>
   )
 }
