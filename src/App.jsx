@@ -1,5 +1,6 @@
 import GitHubProfile from "./components/debug/GitHubProfile";
 import IdForm from "./components/id/IdForm";
+import FindUser from "./components/transition/FindUser";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
   <IdForm />
   <hr />
   <hr />
-  
+  <FindUser />
   </>
   )
 }
