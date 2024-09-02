@@ -1,22 +1,46 @@
 import { useState, useTransition } from "react";
-import { users } from './fakeUser';
+import { users } from "./fakeUser";
 
+const ITEMS_PER_PAGE = 25;
 
 const FindUser = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filtered, setFiltered] = useState(users);
-
   const [isPending, startTransition] = useTransition();
+  const [currentPage, setCurrentPage] = useState(1);
+
+  //without pagination
+  //   const handleChange = ({ target: { value } }) => {
+  //     // Set the search term on the textbox
+  //     setSearchTerm(value);
+
+  //     // Execution of non-urgent state update.
+  //     startTransition(() => {
+  //       // Filter the user list based on the search term
+  //       setFiltered(users.filter((item) => item.name.includes(value)));
+  //     });
+  //   };
+
+  // Calculate the paginated users
+  const paginatedUsers = filtered.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
 
   const handleChange = ({ target: { value } }) => {
-    // Set the search term on the textbox
     setSearchTerm(value);
 
-    // Execution of non-urgent state update.
     startTransition(() => {
-      // Filter the user list based on the search term
       setFiltered(users.filter((item) => item.name.includes(value)));
+      setCurrentPage(1); // Reset to first page when searching
     });
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -45,8 +69,8 @@ const FindUser = () => {
         <div>Loading...</div>
       ) : (
         <div className="flex flex-wrap justify-center items-center mt-4">
-          {filtered.length > 0 ? (
-            filtered.map((user) => (
+          {paginatedUsers.length > 0 ? (
+            paginatedUsers.map((user) => (
               <div
                 key={user?.name}
                 className="flex flex-col m-2 p-2 border rounded-md"
@@ -70,6 +94,27 @@ const FindUser = () => {
           )}
         </div>
       )}
+
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-4">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="border border-gray-300 p-2 rounded mx-1"
+        >
+          Previous
+        </button>
+        <span className="px-4">
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="border border-gray-300 p-2 rounded mx-1"
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
