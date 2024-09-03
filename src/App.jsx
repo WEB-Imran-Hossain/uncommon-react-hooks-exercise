@@ -1,4 +1,5 @@
 import GitHubProfile from "./components/debug/GitHubProfile";
+import ListAnimal from "./components/deferred/ListAnimal";
 import IdForm from "./components/id/IdForm";
 import FindUser from "./components/transition/FindUser";
 
@@ -12,6 +13,9 @@ function App() {
   <hr />
   <hr />
   <FindUser />
+  <hr />
+  <hr />
+  <ListAnimal />
   </>
   )
 }
