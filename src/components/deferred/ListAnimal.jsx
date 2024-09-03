@@ -1,7 +1,7 @@
 import React, { useDeferredValue, useMemo, useState } from "react";
 import { animals } from "./fakeAnimals";
 
-const ITEMS_PER_PAGE = 500;
+const ITEMS_PER_PAGE = 50;
 
 const ListAnimal = () => {
     const [name, setName] = useState("");
@@ -73,7 +73,12 @@ return (
                     key={animal.id}
                     className="border bg-gray-100 p-4 rounded shadow hover:shadow-lg transition"
                 >
-                    {animal.name}
+                     <img
+                            src={animal.avatar} // Ensure each animal object has an 'image' property
+                            alt={animal.name}
+                            className="w-32 h-32 rounded-full"
+                        />
+                        <p className="text-center">{animal.name}</p>
                 </div>
             ))}
         </div>

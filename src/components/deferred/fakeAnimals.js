@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 
-const THRESHOLD = 10000;
+// const THRESHOLD = 10000;
+const THRESHOLD = 1000;
 
 export const animals = Array.from(Array(THRESHOLD), () => {
   return {
