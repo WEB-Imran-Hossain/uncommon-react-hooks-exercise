@@ -5,6 +5,7 @@ import ParentChild from "./components/imperative/ParentChild";
 import ParentComponent from "./components/imperative/ParentComponent";
 import Boomer from "./components/insertion/Boomer";
 import MyComponent from "./components/insertion/MyComponent";
+import ItemList from "./components/layoutEffect/ItemList";
 import LayoutTest from "./components/layoutEffect/LayoutTest";
 import FindUser from "./components/transition/FindUser";
 
@@ -36,6 +37,9 @@ function App() {
   <hr />
   <hr />
   <LayoutTest />
+  <hr />
+  <hr />
+<ItemList />
   </>
   )
 }
