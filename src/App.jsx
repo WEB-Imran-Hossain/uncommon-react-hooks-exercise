@@ -1,6 +1,7 @@
 import GitHubProfile from "./components/debug/GitHubProfile";
 import ListAnimal from "./components/deferred/ListAnimal";
 import IdForm from "./components/id/IdForm";
+import ParentChild from "./components/imperative/ParentChild";
 import Boomer from "./components/insertion/Boomer";
 import MyComponent from "./components/insertion/MyComponent";
 import FindUser from "./components/transition/FindUser";
@@ -24,6 +25,9 @@ function App() {
   <hr />
   <hr />
   <MyComponent />
+  <hr />
+  <hr />
+  <ParentChild />
   </>
   )
 }
