@@ -57,7 +57,7 @@ function goToPage(page) {
 }
 
 return (
-    <>
+    <div className="my-10">
         <input
             type="text"
             value={name}
@@ -113,7 +113,7 @@ return (
                 Next
             </button>
         </div>
-    </>
+    </div>
 );
 };
 
